@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# bin/release <build-dir>
+
+cat <<EOF
+---
+config_vars:
+  PATH: .lein/bin:/usr/local/bin:/usr/bin:/bin
+  JVM_OPTS: -Xmx400m
+default_process_types:
+  web: lein with-profile production trampoline run
+EOF
